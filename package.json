@@ -1,0 +1,19 @@
+{
+  "name": "projetfinal",
+  "version": "1.0.0",
+  "description": "projet final sur nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Mohamadou Moustapha Traore & Serigne Saliou Mbacke Diome",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "mariadb": "^3.0.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.25.6"
+  }
+}
