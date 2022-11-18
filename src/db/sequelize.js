@@ -9,6 +9,7 @@ const paysModel=require('../models/Pays')
 const agenceModel=require('../models/agence')
 const SousAgenceModel=require('../models/SousAgence')
 const BalanceModel=require('../models/balance')
+const VilleModel=require('../models/ville')
 const sequelize = new Sequelize('nodejsangular', 'root', '', {
   host: 'localhost',
   dialect: 'mariadb',
@@ -27,6 +28,7 @@ const Client=ClientModel(sequelize,DataTypes)
   const Agence=agenceModel(sequelize,DataTypes)
   const SousAgence=SousAgenceModel(sequelize,DataTypes)
   const Balance=BalanceModel(sequelize,DataTypes)
+  const Ville=VilleModel(sequelize,DataTypes)
 const initDb = () => {
   return sequelize.sync({force: true}).then(_ => {
   
@@ -43,9 +45,38 @@ const initDb = () => {
     console.log('La base de donnée a bien été initialisée !')
   })
 }
+//relation entre paiement et transaction
+// Transaction.hasOne(Paiement);
+// Paiement.belongsTo(Transaction);
+Transaction.hasOne(Paiement, {
+  foreignKey: 'TRANSACTIONId'
+});
+Paiement.belongsTo(Transaction);
 
-
-  
+//relation entre transaction et devise
+Devise.hasMany(Transaction);
+Transaction.belongsTo(Devise);
+//relation entre client et transaction
+Client.hasMany(Transaction);
+Transaction.belongsTo(Client);
+//relation user et transaction
+User.hasMany(Transaction);
+Transaction.belongsTo(User);
+//relation entre devise et pays
+Devise.hasMany(Pays);
+Pays.belongsTo(Devise);
+//relation entre pays et ville
+Pays.hasMany(Ville);
+Ville.belongsTo(Pays);
+//relation entre user et sousAgence
+SousAgence.hasMany(User);
+ User.belongsTo(SousAgence);
+//relation entre sous agence et Agence
+  Agence.hasMany(SousAgence);
+  SousAgence.belongsTo(Agence);
+//relation entre Agence et Balance
+Agence.hasOne(Balance);
+Balance.belongsTo(Agence);
 module.exports = { 
-  initDb,User,Transaction,Paiement,Client,Devise,Agence,Pays,SousAgence
+  initDb,User,Transaction,Paiement,Client,Devise,Agence,Pays,SousAgence,Balance
 }

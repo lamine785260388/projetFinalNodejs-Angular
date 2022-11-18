@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       nom_recepteur: {
         type: DataTypes.STRING,
+      },
+      TRANSACTIONId:{
+          type:DataTypes.INTEGER,
       }
       
        
