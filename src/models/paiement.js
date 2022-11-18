@@ -1,19 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('User', {
+    return sequelize.define('PAIEMENT', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
-      username: {
-        type: DataTypes.STRING,
-        unique:{msg:'le nom d_utilisteur est deja pris'}
+      date_paiement: {
+        type: DataTypes.DATEONLY ,
+        
       },
-      password: {
+      numero_piece: {
         type: DataTypes.STRING
+      },
+      nom_recepteur: {
+        type: DataTypes.STRING,
       }
-     
       
+       
 
     })
   }

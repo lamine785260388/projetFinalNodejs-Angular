@@ -1,19 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('User', {
+    return sequelize.define('AGENCE', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
-      username: {
+      code_agence: {
         type: DataTypes.STRING,
-        unique:{msg:'le nom d_utilisteur est deja pris'}
+
       },
-      password: {
-        type: DataTypes.STRING
-      }
-     
       
+      nom_agence: {
+        type: DataTypes.STRING,
+      },
+      statut_agence: {
+        type: DataTypes.STRING,
+      }
+       
 
     })
   }
