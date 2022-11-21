@@ -23,6 +23,8 @@ module.exports = (app) => {
         privatekey,
         {expiresIn:"24h"}
      )
+      iduser=user.id
+      console.log(iduser)
         const message = `L'utilisateur a été connecté avec succès`;
         return res.json({ message, data: user,token })
       })

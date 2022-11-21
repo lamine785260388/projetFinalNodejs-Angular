@@ -5,24 +5,24 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
       },
-      nom_emetteur: {
+      nom_client: {
         type: DataTypes.STRING,
 
       },
       
-      prenom_emetteur: {
+      prenom_client: {
         type: DataTypes.STRING,
       },
-      emailemetteur: {
+      emailclient: {
         type: DataTypes.STRING,
       },
-      phone_emetteur: {
+      phone_client: {
         type: DataTypes.INTEGER,
        },
-       dateNaissance_emetteur: {
+       dateNaissance_client: {
         type: DataTypes.DATEONLY,
        },
-       lieuNaissance_emetteur: {
+       lieuNaissance_client: {
         type: DataTypes.STRING,
        },
        role:{

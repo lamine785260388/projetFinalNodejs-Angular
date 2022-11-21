@@ -30,17 +30,17 @@ const Client=ClientModel(sequelize,DataTypes)
   const Balance=BalanceModel(sequelize,DataTypes)
   const Ville=VilleModel(sequelize,DataTypes)
 const initDb = () => {
-  return sequelize.sync({force: true}).then(_ => {
+  return sequelize.sync({force:false}).then(_ => {
   
-    bcrypt.hash('lamine',10)
-    .then(hash=>User.create({
-      username:'lamine',
+    // bcrypt.hash('lamine',10)
+    // .then(hash=>User.create({
+    //   username:'lamine',
      
-      password:hash
-    })
-    .then(user=>console.log(user.toJSON()))
+    //   password:hash
+    // })
+    // .then(user=>console.log(user.toJSON()))
 
-    )
+    // )
    
     console.log('La base de donnée a bien été initialisée !')
   })
@@ -78,5 +78,5 @@ SousAgence.hasMany(User);
 Agence.hasOne(Balance);
 Balance.belongsTo(Agence);
 module.exports = { 
-  initDb,User,Transaction,Paiement,Client,Devise,Agence,Pays,SousAgence,Balance
+  initDb,User,Transaction,Paiement,Client,Devise,Agence,Pays,SousAgence,Balance,Ville
 }
