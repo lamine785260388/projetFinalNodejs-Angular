@@ -10,6 +10,7 @@ module.exports = (app) => {
     AGENCEId:+req.body.AGENCEId
 
     })
+    
     return res.json('insertion Balance success')
     
    

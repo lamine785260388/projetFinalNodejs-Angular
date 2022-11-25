@@ -10,6 +10,7 @@ module.exports = (app) => {
     montantTotal:+req.body.montantTotal,
     status:req.body.status,
     paysDest:req.body.paysDest,
+    frais:+req.body.frais,
     paysOrigine:req.body.paysOrigine,
     DeviceDest:req.body.DeviceDest,
     DeviceOrigine:req.body.DeviceOrigine,

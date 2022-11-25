@@ -27,7 +27,9 @@ module.exports = (sequelize, DataTypes) => {
        DeviceOrigine: {
         type: DataTypes.STRING,
        },
-      
+      frais:{
+        type:DataTypes.FLOAT
+      }
       
 
     })

@@ -10,6 +10,7 @@ const agenceModel=require('../models/agence')
 const SousAgenceModel=require('../models/SousAgence')
 const BalanceModel=require('../models/balance')
 const VilleModel=require('../models/ville')
+
 const sequelize = new Sequelize('nodejsangular', 'root', '', {
   host: 'localhost',
   dialect: 'mariadb',
@@ -42,7 +43,7 @@ const initDb = () => {
 
     // )
    
-    console.log('La base de donnée a bien été initialisée !')
+    console.log('La base de donnée a bien été synchronisé  !')
   })
 }
 //relation entre paiement et transaction
