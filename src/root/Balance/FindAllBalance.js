@@ -9,6 +9,7 @@ module.exports = (app) => {
       Balance.findAll()
       .then(agence => {
         const message = 'La liste des Balances a bien été récupérée.'
+        
         res.json({ message, data: agence })
       })
      .catch(error=>{

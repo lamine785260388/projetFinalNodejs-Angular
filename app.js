@@ -13,9 +13,7 @@ app
 .use(cors())
 
 sequelize.initDb()
-app.get('/',(req,res)=>{
-    res.json('bonjour')
-})
+
 require('./src/root/login')(app)
 require('./src/root/createUser')(app)
 require('./src/root/Client/createClient')(app)
@@ -32,10 +30,14 @@ require('./src/root/Balance/FindAllBalance')(app)
 require('./src/root/Client/FindAllClient')(app)
 require('./src/root/Devise/FindAllDevise')(app)
 require('./src/root/Paiement/FindAllPaiement')(app)
+require('./src/root/Pays/FindAllPays')(app)
+require('./src/root/SousAgence/FindAllSousagence')(app)
+require('./src/root/Transaction/FindAllTransaction')(app)
+require('./src/root/Ville/FindAllVille')(app)
+require('./src/root/Agence/updateAgence')(app)
+require('./src/root/Balance/updateBalance')(app)
 //test middleware:
-app.get('/api/test',auth, (req, res) => {
-res.json('reussi verification')
-})
+
 
 
 app.use(({res})=>{

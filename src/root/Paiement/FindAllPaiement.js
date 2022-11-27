@@ -12,7 +12,7 @@ module.exports = (app) => {
         res.json({ message, data: agence })
       })
      .catch(error=>{
-      const message="la liste des Paiement n'est pas disponibles.Résseyer dans quelques instant!"
+      const message="la liste des Paiements n'est pas disponible.Résseyer dans quelques instant!"
       res.status(500).json({message,data:error})
      })
     
