@@ -25,8 +25,10 @@ module.exports = (app) => {
      )
       iduser=user.id
       console.log(iduser)
-        const message = `L'utilisateur a été connecté avec succès`;
-        return res.json({ message, data: user,token })
+        const message = `L'utilisateur a été connecté avec succès2`;
+       
+       const islogin='true';
+        return res.json({ message, data: user,token,islogin })
       })
     })
      .catch(error=>{
