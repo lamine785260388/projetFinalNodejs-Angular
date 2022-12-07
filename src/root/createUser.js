@@ -8,6 +8,7 @@ module.exports = (app) => {
     bcrypt.hash(req.body.password,10)
     .then(hash=>User.create({
       username:req.body.username,
+      isAdmin:'false',
       password:hash
     }))
     return res.json('inscription success')

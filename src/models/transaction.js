@@ -29,7 +29,10 @@ module.exports = (sequelize, DataTypes) => {
        },
       frais:{
         type:DataTypes.FLOAT
-      }
+      },
+      recepteurid:{
+        type:DataTypes.INTEGER
+      },
       
 
     })

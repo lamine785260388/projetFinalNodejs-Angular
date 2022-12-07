@@ -13,22 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       prenom_client: {
         type: DataTypes.STRING,
       },
-      emailclient: {
-        type: DataTypes.STRING,
-      },
-      phone_client: {
-        type: DataTypes.INTEGER,
-       },
-       dateNaissance_client: {
-        type: DataTypes.DATEONLY,
-       },
-       lieuNaissance_client: {
-        type: DataTypes.STRING,
-       },
-       role:{
-        type:DataTypes.STRING,
+    
+      
+       phone:{
+        type:DataTypes.INTEGER,
        }
-       
 
     })
   }

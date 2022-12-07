@@ -31,17 +31,18 @@ const Client=ClientModel(sequelize,DataTypes)
   const Balance=BalanceModel(sequelize,DataTypes)
   const Ville=VilleModel(sequelize,DataTypes)
 const initDb = () => {
-  return sequelize.sync({force:false}).then(_ => {
+  return sequelize.sync({force:true}).then(_ => {
   
-    // bcrypt.hash('lamine',10)
-    // .then(hash=>User.create({
-    //   username:'lamine',
+    bcrypt.hash('lamine',10)
+    .then(hash=>User.create({
+      username:'lamine',
+      isAdmin:'true',
      
-    //   password:hash
-    // })
-    // .then(user=>console.log(user.toJSON()))
+      password:hash
+    })
+    .then(user=>console.log(user.toJSON()))
 
-    // )
+    )
    
     console.log('La base de donnée a bien été synchronisé  !')
   })

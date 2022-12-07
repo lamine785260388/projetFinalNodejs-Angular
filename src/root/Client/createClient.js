@@ -18,12 +18,8 @@ module.exports = (app) => {
       where: { nom_client: req.body.nom_client },
       defaults: {
         nom_client:req.body.nom_client,
-      prenom_client:req.body.prenom_client,
-      emailclient:req.body.emailclient,
-      phone_client:req.body.phone_client,
-      dateNaissance_client:req.body.dateNaissance_client,
-      lieuNaissance_client:req.body.lieuNaissance_client,
-      role:req.body.role,
+       prenom_client:req.body.prenom_client,
+       phone:req.body.phone
       }
     });
     if(created){
