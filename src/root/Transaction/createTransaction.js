@@ -21,7 +21,15 @@ module.exports = (app) => {
   
 
     })
-    return res.json('issertion Transaction success')
+    .then(result=>{
+      message='insertion passé avec succés'
+      erreur='false'
+      return res.json({message,erreur,data:result.id,erreur})
+    })
+    .catch(error=>{
+      return res.json(error)
+    })
+    
     
    
    
