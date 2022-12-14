@@ -12,9 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
 
       },
-      role:{
-     type:DataTypes.STRING,
-      },
+  
       
       symbole: {
         type: DataTypes.STRING,

@@ -15,8 +15,9 @@ module.exports = (app) => {
 
   
     const [user, created] =  await Client.findOrCreate({
-      where: { nom_client: req.body.nom_client },
+      where: { id: req.body.id },
       defaults: {
+        id:req.body.id,
         nom_client:req.body.nom_client,
        prenom_client:req.body.prenom_client,
        phone:req.body.phone
