@@ -17,6 +17,7 @@ module.exports = (app) => {
     DEVISEId:+req.body.DEVISEId,
     CLIENTId:+req.body.CLIENTId,
     UserId:+req.body.UserId,
+    recepteurid:+req.body.recepteurid
     
   
 
